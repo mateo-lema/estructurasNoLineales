@@ -1,24 +1,13 @@
-## Datos del Estudiante
-- **Nombre:** [Carlos Mateo Lema Pulgarin]
-- **Curso:** [Grupo 1]
-- **Fecha:** [Viernes 19 de junio]
-
---- 
-
-**Fecha:** [viernes 19 de junio]
-**Descripción:** Realizamos un arbol de tipo generico e implementamos los metdos preorden, posorden e inorder.
-
-## 1. Implementación 
-
-```java
-
 package structures.trees;
+
 import structures.node.Node;
 
 public class BinaryTree<T extends Comparable<T>>{
+
     private Node<T> root;
     private int peso;
 
+    // Constructor
     public BinaryTree() {
         this.root = null;
         this.peso = 0;
@@ -33,14 +22,18 @@ public class BinaryTree<T extends Comparable<T>>{
     }
 
     public void setRoot(T value) {
+
         Node<T > node = new Node(value);
         this.root = node;
+
     }
 
     public void add(T value) {
+
         Node<T> node = new Node<T>(value);
         root = addRecursivo(root, node);
         peso++;
+
     }
 
     private Node<T> addRecursivo(Node<T> actual, Node<T> nodeInsertar) {
@@ -49,14 +42,18 @@ public class BinaryTree<T extends Comparable<T>>{
             return nodeInsertar;
 
         if (actual.getValue().compareTo(nodeInsertar.getValue())>0) {
+            // Izq
           actual.setLeftNode(addRecursivo(actual.getLeftNode(), nodeInsertar));
         } else {
+            // Der
              actual.setRightNode(addRecursivo(actual.getRightNode(), nodeInsertar));
         }
 
         return actual;
+
     }
 
+    // PreOrden
     public void preOrden() {
 
         preOrdenRecursivo(root);
@@ -64,6 +61,7 @@ public class BinaryTree<T extends Comparable<T>>{
     }
 
     private void preOrdenRecursivo(Node<T> actual) {
+
         if (actual == null)
             return;
 
@@ -71,11 +69,14 @@ public class BinaryTree<T extends Comparable<T>>{
 
         preOrdenRecursivo(actual.getLeftNode());
         preOrdenRecursivo(actual.getRightNode());
+
     }
 
-
+    // PostOrden
     public void postOrden() {
+
         postOrdenRecursivo(root);
+
     }
 
     private void postOrdenRecursivo(Node<T> actual) {
@@ -87,12 +88,14 @@ public class BinaryTree<T extends Comparable<T>>{
         postOrdenRecursivo(actual.getRightNode());
 
         System.out.println(actual);
+
     }
 
     // InOrden
     public void inOrden() {
 
         inOrdenRecursivo(root);
+
     }
 
     private void inOrdenRecursivo(Node<T> actual) {
@@ -105,9 +108,12 @@ public class BinaryTree<T extends Comparable<T>>{
         inOrdenRecursivo(actual.getRightNode());
 
     }
+
+    // Altura del arbol
     public int getHeight(){
 
         return getHeightRecursivo(root);
+
     }
 
     private int getHeightRecursivo(Node<T> actual) {
@@ -123,8 +129,18 @@ public class BinaryTree<T extends Comparable<T>>{
         return masAlto + 1;
 
     }
+
+    // public int getWeight(){
+
+    //     return getWeightRecursivo(root);
+
+    // }
+
     public int getPeso(){
+
         return peso;
+
     }
+
+
 }
-```
