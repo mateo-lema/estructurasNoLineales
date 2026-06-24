@@ -22,7 +22,11 @@ tengan un valor mayor al nodo.
 
 ## Captura Salida
 
-![alt text](bin/assets/Ejercici1.png)
+
+![alt text](bin/assets/Ejercicio1.png)
+
+
+
 
 ## Codigo
 
