@@ -1,7 +1,6 @@
 ## Datos del Estudiante
 - **Nombre:** [Carlos Mateo Lema Pulgarin]
 - **Curso:** [Grupo 1]
-- **Fecha:** [Viernes 19 de junio]
 
 --- 
 
@@ -210,3 +209,6 @@ public class Ejercicio2 {
     }
 }
 ```
+
+**Fecha:** [Lunes 29  de junio]
+**Descripción:** 

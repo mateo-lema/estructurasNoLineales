@@ -1,0 +1,100 @@
+package collections.set;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+import models.Contacto;
+
+public class Sets {
+
+    public Set<Contacto> construirhashSetContacto() {
+        Set<Contacto> hashSet = new HashSet<>();
+       hashSet.add(new Contacto("Juan", "Perez", "123456789"));
+       hashSet.add(new Contacto("Ana", "Gomez", "987654321"));
+       hashSet.add(new Contacto("Pedro", "Lopez", "456789123"));
+       hashSet.add(new Contacto("Maria", "Rodriguez", "789123456"));
+       hashSet.add(new Contacto("Juan", "Perez", "123456789")); // Duplicado, no se agregará
+       hashSet.add(new Contacto("Juan", "Lopez", "123456789"));
+
+       return hashSet;
+    }
+
+    // verificar si existe un elemento pero no permite ordenarlo
+    public Set<String> construirHashSet() {
+        Set<String> hashSet = new HashSet<>();
+        hashSet.add("A");
+        hashSet.add("B");
+        hashSet.add("C");
+        hashSet.add("A");
+        hashSet.add("D");
+        hashSet.add("E");
+        hashSet.add("F");
+        hashSet.add("1Ggggggeegeg");
+        hashSet.add("2G2gggggeegeg");
+        hashSet.add("3Gggggeegeg");
+        hashSet.add("4Ggggggeegeg");
+        hashSet.add("5Ggggggeegeg");
+        hashSet.add("5Ggggggeegeg");
+        hashSet.add("6Ggggggeegeg");
+        hashSet.add("G7gggggeegeg");
+        ;
+
+        return hashSet;
+
+    }
+
+    public Set<String> construirLinkedHashSet() {
+        Set<String> lSet = new LinkedHashSet<>();
+        lSet.add("A");
+        lSet.add("B");
+        lSet.add("C");
+        lSet.add("A");
+        lSet.add("D");
+        lSet.add("E");
+        lSet.add("F");
+        lSet.add("1Ggggggeegeg");
+        lSet.add("2G2gggggeegeg");
+        lSet.add("3Gggggeegeg");
+        lSet.add("4Ggggggeegeg");
+        lSet.add("5Ggggggeegeg");
+        lSet.add("5Ggggggeegeg");
+        lSet.add("6Ggggggeegeg");
+        lSet.add("G7gggggeegeg");
+
+        return lSet;
+    }
+
+    public Set<String> construirtreeSet() {
+        Set<String> tSet = new TreeSet<>();
+        tSet.add("A");
+        tSet.add("B");
+        tSet.add("C");
+        tSet.add("A");
+        tSet.add("D");
+        tSet.add("E");
+        tSet.add("F");
+        tSet.add("1Ggggggeegeg");
+        tSet.add("2G2gggggeegeg");
+        tSet.add("3Gggggeegeg");
+        tSet.add("4Ggggggeegeg");
+        tSet.add("5Ggggggeegeg");
+        tSet.add("5Ggggggeegeg");
+        tSet.add("6Ggggggeegeg");
+        tSet.add("G7gggggeegeg");
+
+        return tSet;
+    }
+
+    public Set<Contacto> construirtreeSetContacto() {
+        Set<Contacto> treeSetContacto = new TreeSet<>((c1,c2) -> {int compN =c1.getNombre().compareTo(c2.getNombre());if(compN!=0)return compN; int compA=c1.getApellido().compareTo(c2.getApellido()); return compA;});
+       treeSetContacto.add(new Contacto("Juan", "Perez", "123456789"));
+       treeSetContacto.add(new Contacto("Ana", "Gomez", "987654321"));
+       treeSetContacto.add(new Contacto("Pedro", "Lopez", "456789123"));
+       treeSetContacto.add(new Contacto("Maria", "Rodriguez", "789123456"));
+       treeSetContacto.add(new Contacto("Juan", "Perez", "123456789")); 
+       treeSetContacto.add(new Contacto("Juan", "Lopez", "123456789"));
+       return treeSetContacto;
+    }
+}
